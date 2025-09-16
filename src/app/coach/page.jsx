@@ -570,9 +570,9 @@ export default function FitnessAgencyLanding() {
           
           <div className="mt-8 space-y-2">
             {[
-              { label: "WEBSITE:", value: "www.fitboostagency.com" },
-              { label: "EMAIL:", value: "contact@fitboostagency.com" },
-              { label: "PHONE:", value: "+1 (555) 123-4567" },
+              { label: "WEBSITE:", value: "www.fitboost.website" },
+              { label: "EMAIL:", value: "fitboost64@gmail.com" },
+              { label: "PHONE:", value: "01028518754" },
               { label: "SOCIAL MEDIA:", value: "@fitboostagency" }
             ].map((contact, index) => (
               <div 
@@ -594,9 +594,9 @@ export default function FitnessAgencyLanding() {
 
       {/* Floating Action Button */}
       <div className="fixed bottom-8 right-8 z-50">
-        <button className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center font-bold text-xl hover:bg-white hover:scale-110 transform transition-all duration-300 shadow-lg hover:shadow-xl animate-bounce hover:animate-none cursor-pointer">
+        <a href='https://wa.me/201028518754' className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center font-bold text-xl hover:bg-white hover:scale-110 transform transition-all duration-300 shadow-lg hover:shadow-xl animate-bounce hover:animate-none cursor-pointer">
           <MessageCircle className="w-6 h-6" />
-        </button>
+        </a>
       </div>
     </div>
   );

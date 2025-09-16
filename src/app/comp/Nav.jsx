@@ -52,7 +52,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full  flex flex-row justify-center items-center gap-4 py-6 text-amber-300 font-medium md:hidden">
+        <div className="absolute top-full left-0 w-full  flex flex-row justify-center items-center bg-black gap-4 py-3 text-amber-300 font-medium md:hiddentransition-all duration-300 ease-in-out  px-4 rounded hover:scale-105">
           <a href="#home" onClick={() => setIsOpen(false)}>
             Home
           </a>
