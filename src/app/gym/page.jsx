@@ -159,9 +159,9 @@ const FitnessLandingPage = () => {
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 transform hover:rotate-3 transition-transform duration-300">
-                <Award className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-4">STRATEGIC GYM <span className="text-yellow-400">MANAGEMENT</span></h3>
-                <div className="w-16 h-16 mx-auto bg-yellow-300  rounded-full flex items-center justify-center">
+                <Award className="w-12 h-12 text-yellow-450 mx-auto mb-4 text-yellow-500" />
+                <h3 className="text-xl font-bold mb-4">STRATEGIC GYM <span className="text-yellow-500">MANAGEMENT</span></h3>
+                <div className="w-16 h-16 mx-auto bg-yellow-500  rounded-full flex items-center justify-center">
                   <BarChart3 className="w-8 h-8 text-gray-800" />
                 </div>
               </div>
@@ -175,9 +175,9 @@ const FitnessLandingPage = () => {
               </div>
 
               <div className="bg-gradient-to-br from-gray-900 to-gray-900 rounded-xl p-8 transform hover:rotate-3 transition-transform duration-300">
-                <Target className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-4">DATA-DRIVEN <span className="text-yellow-400">DECISIONS</span></h3>
-                <div className="w-16 h-16 mx-auto bg-yellow-300  rounded-full flex items-center justify-center">
+                <Target className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-4">DATA-DRIVEN <span className="text-yellow-500">DECISIONS</span></h3>
+                <div className="w-16 h-16 mx-auto bg-yellow-500  rounded-full flex items-center justify-center">
                   <Users className="w-8 h-8 text-gray-800" />
                 </div>
               </div>
