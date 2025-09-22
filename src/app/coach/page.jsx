@@ -58,7 +58,7 @@ export default function FitnessAgencyLanding() {
   }, []);
 <Image alt='img' src = "/white.png" width={30} height={30}></Image>
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden mt-20">
       {/* Animated Background Pattern */}
       <div 
         className="absolute inset-0 opacity-10 transition-transform duration-1000 ease-out"
@@ -567,28 +567,7 @@ export default function FitnessAgencyLanding() {
             <span>• CONTACT US FOR A </span>
             <span className="font-bold text-yellow-400 hover:text-white transition-colors duration-300 cursor-default">FREE CONSULTATION.</span>
           </div>
-          
-          <div className="mt-8 space-y-2">
-            {[
-              { label: "WEBSITE:", value: "www.fitboost.website" },
-              { label: "EMAIL:", value: "fitboost64@gmail.com" },
-              { label: "PHONE:", value: "01028518754" },
-              { label: "SOCIAL MEDIA:", value: "@fitboostagency" }
-            ].map((contact, index) => (
-              <div 
-                key={index}
-                className="flex items-center space-x-2 transform transition-all duration-500 hover:translate-x-4 hover:scale-105 cursor-pointer"
-                style={{
-                  transform: isVisible.cta ? 'translateX(0)' : 'translateX(-50px)',
-                  opacity: isVisible.cta ? 1 : 0,
-                  transitionDelay: `${600 + index * 100}ms`
-                }}
-              >
-                <span className="text-yellow-400 font-bold hover:text-white transition-colors duration-300">{contact.label}</span>
-                <span className="text-white hover:text-yellow-400 transition-colors duration-300">{contact.value}</span>
-              </div>
-            ))}
-          </div>
+
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import { Oswald } from "next/font/google";
 import "./globals.css";
-
+import Fotter from "./comp/Fotter";
+import Nav from "./comp/Nav";
 const oswald = Oswald({
   variable: "--font-oswald",
   subsets: ["latin"],
@@ -15,8 +16,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body className={`${oswald.variable} antialiased`}>
+        <Nav></Nav>
         {children}
+        <Fotter></Fotter>
       </body>
     </html>
   );

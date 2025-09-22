@@ -34,7 +34,7 @@ const FitnessLandingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black/60 text-white overflow-hidden">
+    <div className="min-h-screen bg-black/60 text-white overflow-hidden mt-20">
       {/* Animated Background Pattern */}
       <div className="fixed inset-0 opacity-10">
 
