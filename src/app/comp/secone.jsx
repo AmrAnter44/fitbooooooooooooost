@@ -9,9 +9,7 @@ export default function Buttons() {
   Fit Boost was founded as a dedicated agency that helps gyms and coaches improve their performance and increase sales. We specialize in creating strategies that optimize operations, enhance client engagement, and drive sustainable growth. At Fit Boost, we believe in people, relationships, and the power of teamwork — combining vision, focus, and innovation to deliver solutions that empower fitness professionals and gyms to reach their full potential.
 </p>
 <div className="text-center my-4">
-<Link href="/page2" className="px-4 py-2 bg-amber-300 text-black mx-auto mt-4">
-  See More
-</Link>
+
   </div>
   </>
 }

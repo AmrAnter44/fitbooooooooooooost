@@ -9,6 +9,7 @@ import Nav2 from "./comp/Nav2";
 import Choose from "./comp/Choose";
 import Resluts from "./comp/Resluts";
 import Why from "./comp/Why";
+import Cta from "./comp/Cta";
 export default function Navbar() {
   return <>
  <Nav></Nav>
@@ -18,6 +19,7 @@ export default function Navbar() {
  <Choose></Choose>
  <Resluts></Resluts>
  <Why></Why>
+ <Cta></Cta>
 
   </>
 }
