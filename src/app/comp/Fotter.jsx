@@ -97,6 +97,12 @@ export default function FitBoostFooter() {
           <div className="w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded"></div>
         </div>
       </div>
+            <p className="text-center bg-black">
+        Direct by{" "}
+        <a href="https://tamyaz.online/" className="text-yellow-600">
+          Tamyaz
+        </a>
+      </p>
     </footer>
   );
 }
