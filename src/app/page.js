@@ -1,28 +1,23 @@
+// Navbar.jsx
 "use client";
 import React from "react";
-import dynamic from 'next/dynamic';
-
-// Static imports للمكونات المهمة Above the fold
+import Image from "next/image";
+import Service from "./comp/Service";
+import Secone from "./comp/secone";
 import Nav from "./comp/Nav";
 import Nav2 from "./comp/Nav2";
-import Secone from "./comp/secone";
-import Service from "./comp/Service";
+import Choose from "./comp/Choose";
+import Resluts from "./comp/Resluts";
+import Why from "./comp/Why";
+export default function Navbar() {
+  return <>
+ <Nav></Nav>
+ <Nav2></Nav2>
+ <Secone></Secone>
+ <Service></Service>
+ <Choose></Choose>
+ <Resluts></Resluts>
+ <Why></Why>
 
-// Dynamic imports للمكونات Below the fold
-const Choose = dynamic(() => import("./comp/Choose"));
-const Resluts = dynamic(() => import("./comp/Resluts"));
-const Cta = dynamic(() => import("./comp/Cta"));
-
-export default function HomePage() {
-  return (
-    <>
-      <Nav />
-      <Nav2 />
-      <Secone />
-      <Service />
-      <Choose />
-      <Resluts />
-      <Cta />
-    </>
-  );
+  </>
 }
