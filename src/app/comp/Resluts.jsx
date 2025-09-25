@@ -175,7 +175,7 @@ const ResultsCaseStudies = () => {
 
               {/* Services */}
               <div className="mt-auto">
-                <h5 className="text-amber-300 font-bold mb-3 text-sm">SERVICES PROVIDED:</h5>
+                <h3 className="text-amber-300 font-bold mb-3 text-sm">SERVICES PROVIDED:</h3>
                 <div className="grid grid-cols-1 gap-2">
                   {study.services.map((service, serviceIndex) => (
                     <div 
