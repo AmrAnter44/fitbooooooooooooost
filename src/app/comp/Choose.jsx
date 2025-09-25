@@ -9,7 +9,7 @@ export default function Choose() {
       <Link href="/coach" className="w-full lg:w-1/2">
         <div className="relative w-full h-60 lg:h-96 rounded-2xl overflow-hidden group cursor-pointer">
           <Image
-            src="/coach.jpg"
+            src="/coach.webp"
             alt="Button 1"
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -25,7 +25,7 @@ export default function Choose() {
       <Link href="/gym" className="w-full lg:w-1/2">
         <div className="relative w-full h-60 lg:h-96 rounded-2xl overflow-hidden group cursor-pointer">
           <Image
-            src="/gym.jpg"
+            src="/gym.webp"
             alt="Button 2"
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
