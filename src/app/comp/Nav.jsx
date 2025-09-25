@@ -1,13 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react"; // أيقونات المنيو من lucide-react
+import Link from "next/link"; // ✅ استيراد Link من نيكست
+import { Menu, X } from "lucide-react";
 
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  // effect بتاع الـ scroll
+  // scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -27,19 +28,39 @@ export default function Nav() {
       }`}
     >
       {/* Logo */}
-      <Image
-        src="/whitelogo.png"
-        alt="Logo"
-        className="w-16 h-16 my-auto"
-        width={80}
-        height={80}
-      />
+      <Link href="/" className="flex items-center">
+        <Image
+          src="/whitelogo.png"
+          alt="Logo"
+          className="w-16 h-16 my-auto"
+          width={80}
+          height={80}
+        />
+      </Link>
 
       {/* Desktop menu */}
       <ul className="hidden md:flex gap-6 text-amber-300 font-medium">
-        <li className="cursor-pointer hover:text-white transition">Home</li>
-        <li className="cursor-pointer hover:text-white transition">sec one</li>
-        <li className="cursor-pointer hover:text-white transition">sec two</li>
+        <li>
+          <Link href="/" className="cursor-pointer hover:text-white transition">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/Coach"
+            className="cursor-pointer hover:text-white transition"
+          >
+            Coach
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/Gym"
+            className="cursor-pointer hover:text-white transition"
+          >
+            Gym
+          </Link>
+        </li>
       </ul>
 
       {/* Mobile button */}
@@ -52,16 +73,16 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full  flex flex-row justify-center items-center bg-black gap-4 py-3 text-amber-300 font-medium md:hiddentransition-all duration-300 ease-in-out  px-4 rounded hover:scale-105">
-          <a href="#home" onClick={() => setIsOpen(false)}>
+        <div className="absolute top-full left-0 w-full flex flex-row justify-center items-center bg-black gap-4 py-3 text-amber-300 font-medium md:hidden transition-all duration-300 ease-in-out px-4 rounded">
+          <Link href="/" onClick={() => setIsOpen(false)}>
             Home
-          </a>
-          <a href="#sec1" onClick={() => setIsOpen(false)}>
-            sec one
-          </a>
-          <a href="#sec2" onClick={() => setIsOpen(false)}>
-            sec two
-          </a>
+          </Link>
+          <Link href="/Coach" onClick={() => setIsOpen(false)}>
+            Coach
+          </Link>
+          <Link href="/Gym" onClick={() => setIsOpen(false)}>
+            Gym
+          </Link>
         </div>
       )}
     </div>
