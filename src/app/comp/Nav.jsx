@@ -67,6 +67,7 @@ export default function Nav() {
       <button
         className="md:hidden text-amber-300"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>

@@ -54,11 +54,11 @@ export default function FitBoostFooter() {
         </div>
 
         {/* Social Media & Copyright */}
-        <div className="border-t border-gray-800 pt-6">
+        <div className="border-t border-gray-800 pt-6" >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             
             {/* Copyright */}
-            <div className="text-gray-400 text-sm">
+            <div className="text-gray-400 text-sm"  are>
               © {new Date().getFullYear()} FitBoost Agency. All rights reserved.
             </div>
 
@@ -69,6 +69,7 @@ export default function FitBoostFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+                aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
@@ -78,6 +79,7 @@ export default function FitBoostFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+                aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
@@ -85,6 +87,7 @@ export default function FitBoostFooter() {
               <a
                 href="mailto:fitboost64@gmail.com"
                 className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+                aria-label="Email"
               >
                 <Mail size={20} />
               </a>
