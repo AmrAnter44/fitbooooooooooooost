@@ -58,7 +58,7 @@ export default function FitBoostFooter() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             
             {/* Copyright */}
-            <div className="text-gray-400 text-sm"  are>
+            <div className="text-gray-400 text-sm"  >
               © {new Date().getFullYear()} FitBoost Agency. All rights reserved.
             </div>
 

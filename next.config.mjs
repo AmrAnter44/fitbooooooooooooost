@@ -21,7 +21,8 @@ const nextConfig = {
   
   // Enable compression
   compress: true,
-  
+  swcMinify: true,
+
   // Simplified experimental features
   experimental: {
     optimizeCss: true,
