@@ -47,7 +47,7 @@ export default function Nav() {
         </li>
         <li>
           <Link
-            href="/Coach"
+            href="/coach"
             className="cursor-pointer hover:text-white transition"
           >
             Coach
@@ -55,7 +55,7 @@ export default function Nav() {
         </li>
         <li>
           <Link
-            href="/Gym"
+            href="/gym"
             className="cursor-pointer hover:text-white transition"
           >
             Gym
@@ -77,10 +77,10 @@ export default function Nav() {
           <Link href="/" onClick={() => setIsOpen(false)}>
             Home
           </Link>
-          <Link href="/Coach" onClick={() => setIsOpen(false)}>
+          <Link href="/coach" onClick={() => setIsOpen(false)}>
             Coach
           </Link>
-          <Link href="/Gym" onClick={() => setIsOpen(false)}>
+          <Link href="/gym" onClick={() => setIsOpen(false)}>
             Gym
           </Link>
         </div>
