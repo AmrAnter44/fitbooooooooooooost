@@ -1,21 +1,39 @@
 "use client";
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Shield, Trophy, BarChart3, Target, Zap, Award, 
   Users, TrendingUp, Clock, Globe, Star, CheckCircle
 } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
-  // Simplified animation
-  const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const observerRef = useRef(null);
+
+  // استخدام Intersection Observer بدلاً من framer-motion
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    const elements = document.querySelectorAll('[data-animate]');
+    elements.forEach(el => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        elements.forEach(el => observerRef.current?.unobserve(el));
+      }
+    };
+  }, []);
 
   // Main reasons
   const mainReasons = [
@@ -74,12 +92,14 @@ const WhyChooseUsSection = () => {
 
       <div className="relative px-4 py-12 max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div 
-          className="text-center mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
+        <div 
+          className={`text-center mb-12 transition-all duration-1000 ease-out ${
+            visibleSections.has('header') 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+          data-animate
+          id="header"
         >
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
             WHY CHOOSE <span className="text-amber-300">FITBOOST</span>
@@ -88,19 +108,21 @@ const WhyChooseUsSection = () => {
           <p className="text-base sm:text-lg md:text-xl text-gray-300">
             WHAT SETS US APART FROM THE COMPETITION
           </p>
-        </motion.div>
+        </div>
 
         {/* Main Three Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {mainReasons.map((reason, index) => (
-            <motion.div
+            <div
               key={index}
-              className="bg-black border border-gray-800 rounded-2xl p-6 text-center"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ delay: index * 0.2 }}
+              className={`bg-black border border-gray-800 rounded-2xl p-6 text-center transition-all duration-1000 ease-out hover:scale-105 ${
+                visibleSections.has(`reason-${index}`)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+              data-animate
+              id={`reason-${index}`}
             >
               {/* Yellow top line */}
               <div className="w-full h-1 justify-center bg-gradient-to-r from-amber-300 to-yellow-500 rounded mb-6"></div>
@@ -118,17 +140,19 @@ const WhyChooseUsSection = () => {
               <div className="bg-amber-300 text-black px-4 py-2 rounded-full justify-center font-bold text-sm">
                 {reason.stats}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Additional Advantages */}
-        <motion.div 
-          className="mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
+        <div 
+          className={`mb-12 transition-all duration-1000 ease-out ${
+            visibleSections.has('advantages')
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+          data-animate
+          id="advantages"
         >
           <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-amber-300">
             ADDITIONAL ADVANTAGES
@@ -138,7 +162,13 @@ const WhyChooseUsSection = () => {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="bg-gray-900/50 border border-gray-800 rounded-xl p-4"
+                className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 hover:bg-gray-800/50 transition-colors duration-200"
+                style={{ 
+                  animationDelay: `${index * 100}ms`,
+                  opacity: visibleSections.has('advantages') ? 1 : 0,
+                  transform: visibleSections.has('advantages') ? 'translateX(0)' : 'translateX(-20px)',
+                  transition: 'all 0.6s ease-out'
+                }}
               >
                 <div className="flex items-start space-x-3">
                   <div className="w-8 h-8 bg-amber-300/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
@@ -149,15 +179,17 @@ const WhyChooseUsSection = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Stats Section */}
-        <motion.div 
-          className="bg-gradient-to-r from-amber-300 to-yellow-500 rounded-2xl p-6 sm:p-8 mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
+        <div 
+          className={`bg-gradient-to-r from-amber-300 to-yellow-500 rounded-2xl p-6 sm:p-8 mb-12 transition-all duration-1000 ease-out ${
+            visibleSections.has('stats')
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-95'
+          }`}
+          data-animate
+          id="stats"
         >
           <div className="text-center mb-6">
             <h3 className="text-2xl sm:text-3xl font-bold text-black mb-2">BY THE NUMBERS</h3>
@@ -175,15 +207,17 @@ const WhyChooseUsSection = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Competitive Edge */}
-        <motion.div 
-          className="text-center mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
+        <div 
+          className={`text-center mb-12 transition-all duration-1000 ease-out ${
+            visibleSections.has('edge')
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+          data-animate
+          id="edge"
         >
           <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-amber-300">
             OUR COMPETITIVE EDGE
@@ -193,17 +227,20 @@ const WhyChooseUsSection = () => {
             {edges.map((edge, index) => (
               <div
                 key={index}
-                className="bg-amber-300 text-black p-4 rounded-xl font-bold text-center"
+                className="bg-amber-300 text-black p-4 rounded-xl font-bold text-center hover:bg-amber-400 transition-colors duration-200"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  opacity: visibleSections.has('edge') ? 1 : 0,
+                  transform: visibleSections.has('edge') ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'all 0.6s ease-out'
+                }}
               >
                 <CheckCircle className="w-6 h-6 mx-auto mb-2" />
                 <span className="text-sm sm:text-base">{edge}</span>
               </div>
             ))}
           </div>
-        </motion.div>
-
-        {/* Final CTA */}
-
+        </div>
       </div>
     </div>
   );
